@@ -1,4 +1,4 @@
-﻿namespace TheB.Domain.Common
+﻿namespace Banalyzer.Domain.Common
 {
     public class Wallet
     {
