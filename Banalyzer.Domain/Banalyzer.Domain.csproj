@@ -41,9 +41,13 @@
   <ItemGroup>
     <Compile Include="Common\Currency.cs" />
     <Compile Include="Common\Deposite.cs" />
-    <Compile Include="Common\Expense.cs" />
+    <Compile Include="Common\IMoneyTransaction.cs" />
+    <Compile Include="Common\MoneyTransactionType.cs" />
+    <Compile Include="Common\WalletExpense.cs" />
     <Compile Include="Common\Wallet.cs" />
+    <Compile Include="Expense\ExpenseCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\WalletType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
