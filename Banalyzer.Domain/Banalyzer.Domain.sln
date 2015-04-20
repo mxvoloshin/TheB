@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banalyzer.Domain", "Banalyzer.Domain.csproj", "{823558E8-B33C-49D2-B17E-4F966581AB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.DAL", "..\Domain.DAL\Domain.DAL.csproj", "{BD429C56-1774-49CF-BE04-171BBF97CCDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banalyzer.DAL", "..\Banalyzer.DAL\Banalyzer.DAL.csproj", "{7BA3A2E5-82F8-42A2-A4D0-4F3A0226CD32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{823558E8-B33C-49D2-B17E-4F966581AB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{823558E8-B33C-49D2-B17E-4F966581AB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{823558E8-B33C-49D2-B17E-4F966581AB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD429C56-1774-49CF-BE04-171BBF97CCDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD429C56-1774-49CF-BE04-171BBF97CCDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD429C56-1774-49CF-BE04-171BBF97CCDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD429C56-1774-49CF-BE04-171BBF97CCDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BA3A2E5-82F8-42A2-A4D0-4F3A0226CD32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BA3A2E5-82F8-42A2-A4D0-4F3A0226CD32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BA3A2E5-82F8-42A2-A4D0-4F3A0226CD32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BA3A2E5-82F8-42A2-A4D0-4F3A0226CD32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

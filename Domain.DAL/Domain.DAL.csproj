@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{823558E8-B33C-49D2-B17E-4F966581AB9A}</ProjectGuid>
+    <ProjectGuid>{BD429C56-1774-49CF-BE04-171BBF97CCDF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Banalyzer.Domain</RootNamespace>
-    <AssemblyName>Banalyzer.Domain</AssemblyName>
+    <RootNamespace>Domain.DAL</RootNamespace>
+    <AssemblyName>Domain.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,26 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category\ExpenseSection.cs" />
-    <Compile Include="Common\Currency.cs" />
-    <Compile Include="Common\Deposite.cs" />
-    <Compile Include="Category\ExpenseSubCategory.cs" />
-    <Compile Include="MoneyTransaction\DepositeMoneyTransaction.cs" />
-    <Compile Include="MoneyTransaction\MoneyTransaction.cs" />
-    <Compile Include="MoneyTransaction\MoneyTransactionType.cs" />
-    <Compile Include="Common\WalletExpense.cs" />
-    <Compile Include="Common\Wallet.cs" />
-    <Compile Include="Category\ExpenseCategory.cs" />
-    <Compile Include="Category\ExpenseTag.cs" />
-    <Compile Include="MoneyTransaction\WalletMoneyTransaction.cs" />
+    <Compile Include="DomainEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Common\WalletType.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Domain.DAL\Domain.DAL.csproj">
-      <Project>{bd429c56-1774-49cf-be04-171bbf97ccdf}</Project>
-      <Name>Domain.DAL</Name>
-    </ProjectReference>
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

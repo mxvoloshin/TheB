@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{823558E8-B33C-49D2-B17E-4F966581AB9A}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{08DA46AE-511A-4DE6-8AD3-7CEA46ED2343}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Banalyzer.Domain</RootNamespace>
-    <AssemblyName>Banalyzer.Domain</AssemblyName>
+    <RootNamespace>BanalyzerConsoleTest</RootNamespace>
+    <AssemblyName>BanalyzerConsoleTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,8 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Banalyzer.Domain\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Banalyzer.Domain\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,24 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category\ExpenseSection.cs" />
-    <Compile Include="Common\Currency.cs" />
-    <Compile Include="Common\Deposite.cs" />
-    <Compile Include="Category\ExpenseSubCategory.cs" />
-    <Compile Include="MoneyTransaction\DepositeMoneyTransaction.cs" />
-    <Compile Include="MoneyTransaction\MoneyTransaction.cs" />
-    <Compile Include="MoneyTransaction\MoneyTransactionType.cs" />
-    <Compile Include="Common\WalletExpense.cs" />
-    <Compile Include="Common\Wallet.cs" />
-    <Compile Include="Category\ExpenseCategory.cs" />
-    <Compile Include="Category\ExpenseTag.cs" />
-    <Compile Include="MoneyTransaction\WalletMoneyTransaction.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Common\WalletType.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Banalyzer.DAL\Banalyzer.DAL.csproj">
+      <Project>{7ba3a2e5-82f8-42a2-a4d0-4f3a0226cd32}</Project>
+      <Name>Banalyzer.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Banalyzer.Domain\Banalyzer.Domain.csproj">
+      <Project>{823558E8-B33C-49D2-B17E-4F966581AB9A}</Project>
+      <Name>Banalyzer.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.DAL\Domain.DAL.csproj">
-      <Project>{bd429c56-1774-49cf-be04-171bbf97ccdf}</Project>
+      <Project>{BD429C56-1774-49CF-BE04-171BBF97CCDF}</Project>
       <Name>Domain.DAL</Name>
     </ProjectReference>
   </ItemGroup>
