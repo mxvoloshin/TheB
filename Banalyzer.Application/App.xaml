@@ -1,0 +1,12 @@
+﻿<Application x:Class="Banalyzer.Application.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vmDeposite="clr-namespace:Banalyzer.Application.Deposite.ViewModel"
+             xmlns:vvDeposite="clr-namespace:Banalyzer.Application.Deposite.View"
+             Startup="Application_Startup">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type vmDeposite:DepositesViewModel}">
+            <vvDeposite:DepositeView />
+        </DataTemplate>
+    </Application.Resources>
+</Application>
