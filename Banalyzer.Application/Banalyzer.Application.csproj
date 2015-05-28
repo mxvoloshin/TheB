@@ -64,11 +64,35 @@
     </ApplicationDefinition>
     <Compile Include="Common\MainWindowViewModel.cs" />
     <Compile Include="Common\ServiceFactory.cs" />
+    <Compile Include="Common\ViewModelLocator.cs" />
+    <Compile Include="Deposite\ViewModel\DepositeViewModel.cs" />
+    <Compile Include="Deposite\View\DepositeCardBigView.xaml.cs">
+      <DependentUpon>DepositeCardBigView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Deposite\View\DepositeCardSmallView.xaml.cs">
+      <DependentUpon>DepositeCardSmallView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Deposite\View\DepositesView.xaml.cs">
+      <DependentUpon>DepositesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Deposite\View\DepositeView.xaml.cs">
       <DependentUpon>DepositeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\DepositeService.cs" />
     <Compile Include="Services\IDepositeService.cs" />
+    <Compile Include="WindowBase.cs" />
+    <Page Include="Deposite\View\DepositeCardBigView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Deposite\View\DepositeCardSmallView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Deposite\View\DepositesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Deposite\View\DepositeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

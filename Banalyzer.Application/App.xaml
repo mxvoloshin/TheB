@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vmDeposite="clr-namespace:Banalyzer.Application.Deposite.ViewModel"
              xmlns:vvDeposite="clr-namespace:Banalyzer.Application.Deposite.View"
+             xmlns:vm="clr-namespace:Banalyzer.Application.Common"
              Startup="Application_Startup">
     <Application.Resources>
+        <vm:ViewModelLocator x:Key="ViewModelLocator"/>
         <DataTemplate DataType="{x:Type vmDeposite:DepositesViewModel}">
-            <vvDeposite:DepositeView />
+            <vvDeposite:DepositesView />
         </DataTemplate>
     </Application.Resources>
 </Application>

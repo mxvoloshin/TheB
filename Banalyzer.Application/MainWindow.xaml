@@ -3,11 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-        xmlns:vm="clr-namespace:Banalyzer.Application.Common"
         AllowsTransparency="True" Height="720" Width="1280" ResizeMode="CanResizeWithGrip" 
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         mc:Ignorable="d"
         d:DataContext="d:DesignInstance vm:MainWindowViewModel"
+        DataContext="{Binding MainViewModel, Source={StaticResource ViewModelLocator}}"
         Background="Black">
     <Grid>
         <Grid.RowDefinitions>
@@ -22,7 +22,7 @@
             <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Width="20" Content="_"/>
         </DockPanel>
         <DockPanel Grid.Row="1">
-            <Button DockPanel.Dock="Right" HorizontalAlignment="Right"  Width="100" Content="Deposites" Command="{Binding ShowDepositeCommand}"/>
+            <Button DockPanel.Dock="Right" HorizontalAlignment="Right"  Width="100" Content="Deposites" Command="{Binding ShowDepositesCommand}"/>
             <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Width="100" Content="Dashboard"/>
             <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Width="100" Content="Expenses"/>
         </DockPanel>

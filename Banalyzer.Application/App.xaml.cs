@@ -19,12 +19,7 @@ namespace Banalyzer.Application
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            var container = new UnityContainer();
-            container.RegisterType(typeof (IRepository<Domain.Common.Deposite, Guid>),
-                typeof (Repository<Domain.Common.Deposite, Guid>));
-
             var mw = new MainWindow();
-            mw.DataContext = new MainWindowViewModel(new ServiceFactory(container));
             mw.Show();
         }
     }

@@ -7,7 +7,7 @@ namespace Banalyzer.Application.Common
     public class ServiceFactory : IServiceFactory
     {
         private readonly IUnityContainer _container;
-        public ServiceFactory(UnityContainer container)
+        public ServiceFactory(IUnityContainer container)
         {
             _container = container;
         }
