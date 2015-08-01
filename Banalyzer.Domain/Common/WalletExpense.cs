@@ -10,7 +10,7 @@ namespace Banalyzer.Domain.Common
         [Required]
         public DateTime ExpenseDate { get; set; }
         [Required]
-        public Decimal Amount { get; set; }
+        public Double Amount { get; set; }
         [Required]
         public virtual Wallet SourceWallet { get; set; }
         [Required]

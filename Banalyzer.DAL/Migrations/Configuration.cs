@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using Banalyzer.Domain.Common;
+
 namespace Banalyzer.DAL.Migrations
 {
     using System;
@@ -19,13 +22,24 @@ namespace Banalyzer.DAL.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+
+            //fill currencies
+            if (!context.Currencies.Any())
+            {
+                context.Currencies.AddRange(new List<Currency>()
+                {
+                    new Currency {Code = "UAH", Description = "Hrivna"},
+                    new Currency {Code = "USD", Description = "Dollar"},
+                    new Currency {Code = "EUR", Description = "Euro"}
+                });
+            }
+            //context.Currencies AddOrUpdate(
+            //  p => p.FullName,
+            //  new Person { FullName = "Andrew Peters" },
+            //  new Person { FullName = "Brice Lambson" },
+            //  new Person { FullName = "Rowan Miller" }
+            //);
+            
         }
     }
 }

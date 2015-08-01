@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Banalyzer.Application.Deposite.View.DepositesGeneralView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm ="clr-namespace:Banalyzer.Application.Deposite.ViewModel"
+             xmlns:local ="clr-namespace:Banalyzer.Application.Deposite.View"
+             mc:Ignorable="d" d:DataContext="d:DesignInstance vm:DepositesGeneralViewModel"
+             d:DesignHeight="500" d:DesignWidth="500">
+
+    <UserControl.Resources>
+
+        <DataTemplate DataType="{x:Type vm:DepositesViewModel}">
+            <local:DepositesView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:DepositeTransactionsViewModel}">
+            <local:DepositeTransactionsView />
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ContentControl Grid.Row="0" Grid.Column="0" Content="{Binding DepositesViewModel}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <ContentControl Grid.Row="0" Grid.Column="1" Content="{Binding DepositeTransactionViewModel}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+    </Grid>
+</UserControl>

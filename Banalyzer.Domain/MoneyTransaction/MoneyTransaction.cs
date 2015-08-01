@@ -12,8 +12,8 @@ namespace Banalyzer.Domain.MoneyTransaction
         [Required]
         public DateTime TransactionDate { get; set; }
         [Required]
-        public Decimal Amount { get; set; }
-        [Required]
-        public virtual Currency Currency { get; set; }
+        public Double Amount { get; set; }
+        [MaxLength(255)]
+        public String Comment { get; set; }
     }
 }

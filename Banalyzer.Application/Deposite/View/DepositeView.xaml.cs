@@ -17,7 +17,7 @@ namespace Banalyzer.Application.Deposite.View
     /// <summary>
     /// Interaction logic for DepositeView.xaml
     /// </summary>
-    public partial class DepositeView : WindowBase
+    public partial class DepositeView : UserControl
     {
         public DepositeView()
         {

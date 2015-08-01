@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Banalyzer.Application.Deposite.View;
@@ -7,16 +9,57 @@ using MvvmCommon;
 
 namespace Banalyzer.Application.Common
 {
-    public class MainWindowViewModel : ViewModelBase
+    public class MainWindowViewModel : ViewModelBase, IRequestCloseViewModel, IDisplayMessageInContent
     {
-        
         private readonly IServiceFactory _serviceFactory;
+        private readonly ViewModelLocator _vmLocator = new ViewModelLocator();
+        public event EventHandler RequestClose;
 
         public MainWindowViewModel(IServiceFactory serviceFactory)
         {
             _serviceFactory = serviceFactory;
 
             ShowDepositesCommand = new RelayCommand(ShowDeposites);
+            CloseApplicationCommand = new RelayCommand(CloseApplication);
+        }
+
+        private MessageViewModel _errorViewModel;
+        public MessageViewModel ErrorViewModel
+        {
+            get { return _errorViewModel; }
+            set
+            {
+                _errorViewModel = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private QuestionViewModel _questionViewModel;
+        public QuestionViewModel QuestionViewModel
+        {
+            get { return _questionViewModel; }
+            set
+            {
+                _questionViewModel = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public RelayCommand CloseApplicationCommand { get; set; }
+        private void CloseApplication()
+        {
+            RequestClose(this, null);
+        }
+        
+        private bool _locked;
+        public bool IsLocked
+        {
+            get { return _locked; }
+            set
+            {
+                _locked = value;
+                OnPropertyChanged();
+            }
         }
 
         private ViewModelBase _currentViewModel;
@@ -32,54 +75,46 @@ namespace Banalyzer.Application.Common
                 {
                     UnSubscribeEvents(_currentViewModel);
                 }
-                else
-                {
-                    SubscribeEvents(value);
-                }
+                
+                SubscribeEvents(value);
 
                 _currentViewModel = value;
-                OnPropertyChanged("CurrentViewModel");
+                OnPropertyChanged();
             }
         }
 
         private void SubscribeEvents(ViewModelBase viewmodel)
         {
-            if (viewmodel is DepositesViewModel)
+            if (viewmodel is DepositesGeneralViewModel)
             {
-                SubscribeDepositesEvents(viewmodel as DepositesViewModel);
+                SubscribeDepositesEvents(viewmodel as DepositesGeneralViewModel);
             }
         }
 
         private void UnSubscribeEvents(ViewModelBase viewmodel)
         {
-            if (viewmodel is DepositesViewModel)
+            if (viewmodel is DepositesGeneralViewModel)
             {
-                UnSubscribeDepositesEvents(viewmodel as DepositesViewModel);
+                UnSubscribeDepositesEvents(viewmodel as DepositesGeneralViewModel);
             }
         }
 
         public ICommand ShowDepositesCommand { get; set; }
-        private void ShowDeposites()
+        private async void ShowDeposites()
         {
-            var depositesViewModel = new DepositesViewModel(_serviceFactory);
-
-            CurrentViewModel = depositesViewModel;
+            //CurrentViewModel = new WaitingViewModel();
+            IsLocked = true;
+            CurrentViewModel = await _vmLocator.DepositeGeneralViewModel();
+            IsLocked = false;
         }
 
-        public const String AddDepositeEventName = "AddDepositeEvent";
-        private void SubscribeDepositesEvents(DepositesViewModel viewModel)
+        private void SubscribeDepositesEvents(DepositesGeneralViewModel viewModel)
         {
-            WeakEventManager<DepositesViewModel, EventArgs>.AddHandler(viewModel, AddDepositeEventName, AddDeposite);
+            
         }
-        private void UnSubscribeDepositesEvents(DepositesViewModel viewModel)
+        private void UnSubscribeDepositesEvents(DepositesGeneralViewModel viewModel)
         {
-            WeakEventManager<DepositesViewModel, EventArgs>.RemoveHandler(viewModel, AddDepositeEventName, AddDeposite);
-        }
-
-        public void AddDeposite(object sender, EventArgs args)
-        {
-            var view = new DepositeView();
-            view.Show();
+            
         }
     }
 }

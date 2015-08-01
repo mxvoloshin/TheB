@@ -22,16 +22,14 @@ namespace Banalyzer.DAL.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Deposite_Id = c.Guid(nullable: false),
                         TransactionType = c.Int(nullable: false),
                         TransactionDate = c.DateTime(nullable: false),
-                        Amount = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Currency_Id = c.Int(nullable: false),
-                        Deposite_Id = c.Guid(),
+                        Amount = c.Double(nullable: false),
+                        Comment = c.String(maxLength: 255),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Currencies", t => t.Currency_Id, cascadeDelete: true)
-                .ForeignKey("dbo.Deposites", t => t.Deposite_Id)
-                .Index(t => t.Currency_Id)
+                .ForeignKey("dbo.Deposites", t => t.Deposite_Id, cascadeDelete: true)
                 .Index(t => t.Deposite_Id);
             
             CreateTable(
@@ -42,10 +40,11 @@ namespace Banalyzer.DAL.Migrations
                         OpenedDate = c.DateTime(nullable: false),
                         CloseDate = c.DateTime(nullable: false),
                         BankName = c.String(nullable: false, maxLength: 50),
-                        OpenedAmount = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        CurrentAmount = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Percent = c.Single(nullable: false),
+                        OpenedAmount = c.Double(nullable: false),
+                        CurrentAmount = c.Double(nullable: false),
                         Currency_Id = c.Int(nullable: false),
+                        Percent = c.Double(nullable: false),
+                        Owner = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Currencies", t => t.Currency_Id, cascadeDelete: true)
@@ -100,7 +99,7 @@ namespace Banalyzer.DAL.Migrations
                     {
                         Id = c.Guid(nullable: false),
                         ExpenseDate = c.DateTime(nullable: false),
-                        Amount = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Amount = c.Double(nullable: false),
                         Section_Id = c.Int(nullable: false),
                         SourceWallet_Id = c.Guid(nullable: false),
                         SubCategory_Id = c.Int(nullable: false),
@@ -123,7 +122,7 @@ namespace Banalyzer.DAL.Migrations
                         Id = c.Guid(nullable: false),
                         Name = c.String(nullable: false, maxLength: 50),
                         Description = c.String(maxLength: 100),
-                        Amount = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Amount = c.Double(nullable: false),
                         Currency_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -137,45 +136,29 @@ namespace Banalyzer.DAL.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         TransactionType = c.Int(nullable: false),
                         TransactionDate = c.DateTime(nullable: false),
-                        Amount = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Currency_Id = c.Int(nullable: false),
+                        Amount = c.Double(nullable: false),
+                        Comment = c.String(maxLength: 255),
                         Wallet_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Currencies", t => t.Currency_Id, cascadeDelete: true)
                 .ForeignKey("dbo.Wallets", t => t.Wallet_Id)
-                .Index(t => t.Currency_Id)
                 .Index(t => t.Wallet_Id);
-
-            CreateIndex("dbo.Currencies", "Code", true);
-            CreateIndex("dbo.ExpenseCategories", "Name", true);
-            CreateIndex("dbo.ExpenseSubCategories", "Name", true);
-            CreateIndex("dbo.ExpenseSections", "Name", true);
-            CreateIndex("dbo.Wallets", "Name", true);
+            
         }
-
+        
         public override void Down()
         {
-            DropIndex("dbo.Currencies", new[] { "Code" });
-            DropIndex("dbo.ExpenseCategories", new[] { "Name" });
-            DropIndex("dbo.ExpenseSubCategories", new[] { "Name" });
-            DropIndex("dbo.ExpenseSections", new[] { "Name" });
-            DropIndex("dbo.Wallets", new[] { "Name" });
-
             DropForeignKey("dbo.WalletExpenses", "Tag_Id", "dbo.ExpenseTags");
             DropForeignKey("dbo.WalletExpenses", "SubCategory_Id", "dbo.ExpenseSubCategories");
             DropForeignKey("dbo.WalletExpenses", "SourceWallet_Id", "dbo.Wallets");
             DropForeignKey("dbo.WalletMoneyTransactions", "Wallet_Id", "dbo.Wallets");
-            DropForeignKey("dbo.WalletMoneyTransactions", "Currency_Id", "dbo.Currencies");
             DropForeignKey("dbo.Wallets", "Currency_Id", "dbo.Currencies");
             DropForeignKey("dbo.WalletExpenses", "Section_Id", "dbo.ExpenseSections");
             DropForeignKey("dbo.ExpenseTags", "Category_Id", "dbo.ExpenseCategories");
             DropForeignKey("dbo.ExpenseSubCategories", "Category_Id", "dbo.ExpenseCategories");
             DropForeignKey("dbo.DepositeMoneyTransactions", "Deposite_Id", "dbo.Deposites");
             DropForeignKey("dbo.Deposites", "Currency_Id", "dbo.Currencies");
-            DropForeignKey("dbo.DepositeMoneyTransactions", "Currency_Id", "dbo.Currencies");
             DropIndex("dbo.WalletMoneyTransactions", new[] { "Wallet_Id" });
-            DropIndex("dbo.WalletMoneyTransactions", new[] { "Currency_Id" });
             DropIndex("dbo.Wallets", new[] { "Currency_Id" });
             DropIndex("dbo.WalletExpenses", new[] { "Tag_Id" });
             DropIndex("dbo.WalletExpenses", new[] { "SubCategory_Id" });
@@ -185,7 +168,6 @@ namespace Banalyzer.DAL.Migrations
             DropIndex("dbo.ExpenseSubCategories", new[] { "Category_Id" });
             DropIndex("dbo.Deposites", new[] { "Currency_Id" });
             DropIndex("dbo.DepositeMoneyTransactions", new[] { "Deposite_Id" });
-            DropIndex("dbo.DepositeMoneyTransactions", new[] { "Currency_Id" });
             DropTable("dbo.WalletMoneyTransactions");
             DropTable("dbo.Wallets");
             DropTable("dbo.WalletExpenses");

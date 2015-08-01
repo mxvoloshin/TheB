@@ -1,7 +1,10 @@
-﻿namespace Domain.DAL.UnitOfWork
+﻿using System;
+using System.Threading.Tasks;
+
+namespace Domain.DAL.UnitOfWork
 {
     public interface IUnitOfWork
     {
-        void CommitTransaction();
+        Task CommitTransaction();
     }
 }

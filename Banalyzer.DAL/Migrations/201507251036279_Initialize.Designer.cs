@@ -13,7 +13,7 @@ namespace Banalyzer.DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201504151500260_Initialize"; }
+            get { return "201507251036279_Initialize"; }
         }
         
         string IMigrationMetadata.Source

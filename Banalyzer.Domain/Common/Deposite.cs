@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Banalyzer.Domain.MoneyTransaction;
 using Domain.DAL;
 
@@ -8,6 +9,12 @@ namespace Banalyzer.Domain.Common
 {
     public class Deposite : DomainEntity<Guid>
     {
+        public Deposite()
+        {
+            OpenedDate = DateTime.Now;
+            CloseDate = DateTime.Now;
+        }
+
         [Required]
         public DateTime OpenedDate { get; set; }
         [Required]
@@ -16,13 +23,17 @@ namespace Banalyzer.Domain.Common
         [MaxLength(50)]
         public String BankName { get; set; }
         [Required]
-        public Decimal OpenedAmount { get; set; }
+        public Double OpenedAmount { get; set; }
         [Required]
-        public Decimal CurrentAmount { get; set; }
+        public Double CurrentAmount { get; set; }
         [Required]
-        public Currency Currency { get; set; }
+        public Int32 Currency_Id { get; set; }
+        [ForeignKey("Currency_Id")]
+        public virtual Currency Currency { get; set; }
         [Required]
-        public Single Percent { get; set; }
+        public Double Percent { get; set; }
+        [Required]
+        public String Owner { get; set; }
         public virtual IList<DepositeMoneyTransaction> MoneyTransactions { get; set; }
     }
 }

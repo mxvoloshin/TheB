@@ -18,11 +18,29 @@ namespace Banalyzer.Application
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : WindowBase
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void DockPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
+        }
+
+        private void ButtonChangeState_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
+        }
+
+        private void ButtonMinimizeState_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
     }
 }

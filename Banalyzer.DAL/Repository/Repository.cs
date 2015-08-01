@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Linq;
+using System.Linq.Expressions;
 using Domain.DAL;
 using Domain.DAL.Repository;
 
@@ -22,12 +25,21 @@ namespace Banalyzer.DAL.Repository
 
         public void Remove(TEntity entity)
         {
-            _context.Set<TEntity>().Remove(entity);
+            _context.Entry(entity).State = EntityState.Deleted;
+        }
+
+        public IQueryable<TEntity> All()
+        {
+            return _context.Set<TEntity>();
+        }
+        public IQueryable<TEntity> FindAll(Expression<Func<TEntity, bool>> expression)
+        {
+            return _context.Set<TEntity>().Where(expression);
         }
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            _context.Entry(entity).State = EntityState.Modified;
         }
     }
 }

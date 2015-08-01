@@ -14,7 +14,7 @@ namespace Banalyzer.Domain.Common
         [MaxLength(100)]
         public String Description { get; set; }
         [Required]
-        public Decimal Amount { get; set; }
+        public Double Amount { get; set; }
         [Required]
         public virtual Currency Currency { get; set; }
         public virtual IList<WalletExpense> Expenses { get; set; }
