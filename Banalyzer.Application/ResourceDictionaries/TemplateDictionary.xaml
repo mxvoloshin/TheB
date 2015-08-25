@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mvvmCommon="clr-namespace:MvvmCommon;assembly=MvvmCommon"
+                    xmlns:common="clr-namespace:Banalyzer.Application.Common"
+                    xmlns:vmDeposite="clr-namespace:Banalyzer.Application.Deposite.ViewModel"
+                    xmlns:view="clr-namespace:Banalyzer.Application.Deposite.View">
+
+    <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    
+    <ControlTemplate  x:Key="LockedStyle">
+        <common:WaitingView/>
+    </ControlTemplate>
+
+    <DataTemplate DataType="{x:Type mvvmCommon:MessageViewModel}">
+        <StackPanel Background="Red" Visibility="{Binding IsShowMessage, Converter={StaticResource BoolToVis}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock Text="{Binding ErrorMessage}"/>
+            <Button Content="Ok" Command="{Binding MessageWindowCloseCommand}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type mvvmCommon:QuestionViewModel}">
+        <StackPanel Background="Yellow" Visibility="{Binding IsShowMessage, Converter={StaticResource BoolToVis}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock Text="{Binding Question}"/>
+            <Button Content="Yes" Command="{Binding QuestionWindowYesCommand}"/>
+            <Button Content="No" Command="{Binding QuestionWindowNoCommand}"/>
+            <Button Content="Cancel" Command="{Binding QuestionWindowCancelCommand}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <common:ViewModelLocator x:Key="ViewModelLocator"/>
+    <DataTemplate DataType="{x:Type vmDeposite:DepositesGeneralViewModel}">
+        <view:DepositesGeneralView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vmDeposite:DepositeViewModel}">
+        <view:DepositeView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type common:WaitingViewModel}">
+        <common:WaitingView />
+    </DataTemplate>
+    
+</ResourceDictionary>

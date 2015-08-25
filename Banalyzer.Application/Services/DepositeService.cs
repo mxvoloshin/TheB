@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -55,7 +56,8 @@ namespace Banalyzer.Application.Services
             {
                 using (var uof = _serviceFactory.UnitOfWork())
                 {
-                    return uof.Repository<Domain.Common.Deposite, Guid>().All().ToList();
+                    return uof.Repository<Domain.Common.Deposite, Guid>().All()
+                              .Include(x=>x.Currency).ToList();
                 }
             });
         }

@@ -6,7 +6,7 @@
     
     <UserControl.Resources>
         
-        <Style x:Key="TextBoxWithValidation" TargetType="{x:Type TextBox}">
+        <!--<Style x:Key="TextBoxWithValidation" TargetType="{x:Type TextBox}">
             <Setter Property="Validation.ErrorTemplate">
                 <Setter.Value>
                     <ControlTemplate>
@@ -23,7 +23,7 @@
                     <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
                 </Trigger>
             </Style.Triggers>
-        </Style>
+        </Style>-->
 
         <ControlTemplate x:Key="AddStyle" TargetType="{x:Type ContentControl}">
             <StackPanel>
@@ -32,15 +32,15 @@
                 <Label Content="Close Date:"/>
                 <DatePicker SelectedDate="{Binding CloseDate}"/>
                 <Label Content="BankName"/>
-                <TextBox Style="{StaticResource TextBoxWithValidation}" Text="{Binding BankName, Mode=TwoWay, NotifyOnValidationError=True}"/>
+                <TextBox Text="{Binding BankName, Mode=TwoWay, NotifyOnValidationError=True}"/>
                 <Label Content="OpenedAmount"/>
-                <TextBox Style="{StaticResource TextBoxWithValidation}" Text="{Binding OpenedAmount, Mode=TwoWay, NotifyOnValidationError=True}"/>
+                <TextBox Text="{Binding OpenedAmount, Mode=TwoWay, NotifyOnValidationError=True}"/>
                 <Label Content="Currency"/>
                 <ComboBox ItemsSource="{Binding Currencies}" DisplayMemberPath="Code" SelectedValuePath="Id" SelectedValue="{Binding Currency}"/>
                 <Label Content="Percent"/>
-                <TextBox Style="{StaticResource TextBoxWithValidation}" Text="{Binding Percent, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
+                <TextBox Text="{Binding Percent, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
                 <Label Content="Owner"/>
-                <TextBox Style="{StaticResource TextBoxWithValidation}" Text="{Binding Owner, Mode=TwoWay, NotifyOnValidationError=True}"/>
+                <TextBox Text="{Binding Owner, Mode=TwoWay, NotifyOnValidationError=True}"/>
             </StackPanel>
         </ControlTemplate>
 
@@ -51,15 +51,15 @@
                 <Label Content="Close Date:"/>
                 <DatePicker SelectedDate="{Binding CloseDate}"/>
                 <Label Content="BankName"/>
-                <TextBox Style="{StaticResource TextBoxWithValidation}" Text="{Binding BankName, Mode=TwoWay, NotifyOnValidationError=True}"/>
+                <TextBox Text="{Binding BankName, Mode=TwoWay, NotifyOnValidationError=True}"/>
                 <Label Content="OpenedAmount"/>
-                <TextBox Style="{StaticResource TextBoxWithValidation}" Text="{Binding OpenedAmount, Mode=TwoWay, NotifyOnValidationError=True}"/>
+                <TextBox Text="{Binding OpenedAmount, Mode=TwoWay, NotifyOnValidationError=True}"/>
                 <Label Content="Currency"/>
                 <ComboBox ItemsSource="{Binding Currencies}" DisplayMemberPath="Code" SelectedValuePath="Id" SelectedValue="{Binding Currency}"/>
                 <Label Content="Percent"/>
-                <TextBox Style="{StaticResource TextBoxWithValidation}" Text="{Binding Percent, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
+                <TextBox Text="{Binding Percent, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
                 <Label Content="Owner"/>
-                <TextBox Style="{StaticResource TextBoxWithValidation}" Text="{Binding Owner, Mode=TwoWay, NotifyOnValidationError=True}"/>
+                <TextBox Text="{Binding Owner, Mode=TwoWay, NotifyOnValidationError=True}"/>
             </StackPanel>
         </ControlTemplate>
 

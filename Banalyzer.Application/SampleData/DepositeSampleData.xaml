@@ -1,0 +1,230 @@
+﻿<Common:Deposite xmlns:Common="clr-namespace:Banalyzer.Domain.Common;assembly=Banalyzer.Domain" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:MoneyTransaction="clr-namespace:Banalyzer.Domain.MoneyTransaction;assembly=Banalyzer.Domain" BankName="Privatbank" Currency_Id="77" CurrentAmount="180.73" CloseDate="08/12/2015 11:09:44" OpenedAmount="771.59" OpenedDate="08/12/2015 11:09:44" Owner="Maksym, Voloshyn" Percent="483.02">
+	<Common:Deposite.Currency>
+		<Common:Currency Code="UAH" Description="Vestibulum class curae" Id="18"/>
+	</Common:Deposite.Currency>
+	<Common:Deposite.Id>
+		<System:Guid/>
+	</Common:Deposite.Id>
+	<Common:Deposite.MoneyTransactions>
+		<MoneyTransaction:DepositeMoneyTransaction Amount="937.23" Comment="Adipiscing blandit amet" Id="93" TransactionDate="08/12/2015 11:09:44" TransactionType="Income">
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+				<System:Guid/>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite>
+				<Common:Deposite BankName="Etiam aenean" Currency_Id="48" CurrentAmount="282.15" CloseDate="08/12/2015 11:09:44" OpenedAmount="967.21" OpenedDate="08/12/2015 11:09:44" Owner="Dignissim duis fusce" Percent="971.29">
+					<Common:Deposite.Currency>
+						<Common:Currency Code="UAH" Description="Est vestibulum" Id="96"/>
+					</Common:Deposite.Currency>
+					<Common:Deposite.Id>
+						<System:Guid/>
+					</Common:Deposite.Id>
+					<Common:Deposite.MoneyTransactions>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="157.97" Comment="Hac leo elementum" Id="28" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="410.51" Comment="Mauris nunc vestibulum lorem adipiscing" Id="97" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="360.73" Comment="Parturient vestibulum" Id="15" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="931.86" Comment="Aliquam nullam aliquet praesent facilisis" Id="41" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="261.52" Comment="Vestibulum aptent" Id="36" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+					</Common:Deposite.MoneyTransactions>
+				</Common:Deposite>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite>
+		</MoneyTransaction:DepositeMoneyTransaction>
+		<MoneyTransaction:DepositeMoneyTransaction Amount="131.96" Comment="Fames diam habitant" Id="38" TransactionDate="08/12/2015 11:09:44" TransactionType="Income">
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+				<System:Guid/>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite>
+				<Common:Deposite BankName="Accumsan morbi" Currency_Id="26" CurrentAmount="393.7" CloseDate="08/12/2015 11:09:44" OpenedAmount="195.78" OpenedDate="08/12/2015 11:09:44" Owner="Dictumst vestibulum fermentum" Percent="250.36">
+					<Common:Deposite.Currency>
+						<Common:Currency Code="Nulla parturient mus ante proin" Description="Bibendum auctor" Id="93"/>
+					</Common:Deposite.Currency>
+					<Common:Deposite.Id>
+						<System:Guid/>
+					</Common:Deposite.Id>
+					<Common:Deposite.MoneyTransactions>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="796.21" Comment="Eleifend commodo" Id="19" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="257.34" Comment="Fringilla habitasse conubia hendrerit facilisi" Id="39" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="383.48" Comment="Faucibus arcu" Id="25" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="268.21" Comment="Congue nec augue" Id="79" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="870.76" Comment="Himenaeos cubilia non dolor" Id="25" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+					</Common:Deposite.MoneyTransactions>
+				</Common:Deposite>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite>
+		</MoneyTransaction:DepositeMoneyTransaction>
+		<MoneyTransaction:DepositeMoneyTransaction Amount="778.46" Comment="Gravida pharetra vestibulum" Id="34" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome">
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+				<System:Guid/>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite>
+				<Common:Deposite BankName="Per eget" Currency_Id="26" CurrentAmount="620.72" CloseDate="08/12/2015 11:09:44" OpenedAmount="413.66" OpenedDate="08/12/2015 11:09:44" Owner="Nascetur egestas felis sem imperdiet" Percent="353.81">
+					<Common:Deposite.Currency>
+						<Common:Currency Code="Vestibulum inceptos interdum" Description="Lobortis adipiscing cursus sed dapibus" Id="87"/>
+					</Common:Deposite.Currency>
+					<Common:Deposite.Id>
+						<System:Guid/>
+					</Common:Deposite.Id>
+					<Common:Deposite.MoneyTransactions>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="307.9" Comment="Malesuada sit parturient vestibulum" Id="13" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="345.13" Comment="Dictum euismod elit vestibulum adipiscing" Id="41" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="791.23" Comment="Enim ipsum" Id="62" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="817.73" Comment="Parturient vel feugiat erat" Id="35" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="637.28" Comment="Nam lectus justo sed vestibulum" Id="30" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+					</Common:Deposite.MoneyTransactions>
+				</Common:Deposite>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite>
+		</MoneyTransaction:DepositeMoneyTransaction>
+		<MoneyTransaction:DepositeMoneyTransaction Amount="220.74" Comment="Ultricies venenatis sed mauris vulputate" Id="48" TransactionDate="08/12/2015 11:09:44" TransactionType="Income">
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+				<System:Guid/>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite>
+				<Common:Deposite BankName="Dis est placerat libero pulvinar" Currency_Id="79" CurrentAmount="675.44" CloseDate="08/12/2015 11:09:44" OpenedAmount="159.75" OpenedDate="08/12/2015 11:09:44" Owner="Leo litora lorem senectus" Percent="852.05">
+					<Common:Deposite.Currency>
+						<Common:Currency Code="Eros ligula adipiscing penatibus lacus" Description="Hac sagittis" Id="81"/>
+					</Common:Deposite.Currency>
+					<Common:Deposite.Id>
+						<System:Guid/>
+					</Common:Deposite.Id>
+					<Common:Deposite.MoneyTransactions>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="483.75" Comment="Mus porttitor" Id="63" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="822.19" Comment="Magna nec luctus" Id="77" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="992.92" Comment="Magnis sociosqu tincidunt tristique parturient" Id="15" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="123.06" Comment="Mattis massa metus nibh" Id="67" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="697.93" Comment="Nisi morbi non per vestibulum" Id="85" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+					</Common:Deposite.MoneyTransactions>
+				</Common:Deposite>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite>
+		</MoneyTransaction:DepositeMoneyTransaction>
+		<MoneyTransaction:DepositeMoneyTransaction Amount="868.71" Comment="Sodales viverra pede parturient" Id="66" TransactionDate="08/12/2015 11:09:44" TransactionType="Income">
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+				<System:Guid/>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite>
+				<Common:Deposite BankName="Iaculis neque lacinia suscipit" Currency_Id="82" CurrentAmount="991.14" CloseDate="08/12/2015 11:09:44" OpenedAmount="369.91" OpenedDate="08/12/2015 11:09:44" Owner="Torquent mollis posuere netus phasellus" Percent="666.59">
+					<Common:Deposite.Currency>
+						<Common:Currency Code="Sem curabitur nisl laoreet sit" Description="Natoque vestibulum vel nunc" Id="99"/>
+					</Common:Deposite.Currency>
+					<Common:Deposite.Id>
+						<System:Guid/>
+					</Common:Deposite.Id>
+					<Common:Deposite.MoneyTransactions>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="810.62" Comment="Ultrices consequat vehicula odio" Id="12" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="936.42" Comment="Volutpat potenti" Id="69" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="555.02" Comment="Orci convallis pretium adipiscing" Id="22" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="835.99" Comment="Rhoncus montes dignissim" Id="36" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="726.21" Comment="Nam nostra" Id="99" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+					</Common:Deposite.MoneyTransactions>
+				</Common:Deposite>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite>
+		</MoneyTransaction:DepositeMoneyTransaction>
+		<MoneyTransaction:DepositeMoneyTransaction Amount="229.21" Comment="Urna vitae faucibus class" Id="15" TransactionDate="08/12/2015 11:09:44" TransactionType="Income">
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+				<System:Guid/>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite>
+				<Common:Deposite BankName="Sed elementum dis facilisis" Currency_Id="81" CurrentAmount="157.68" CloseDate="08/12/2015 11:09:44" OpenedAmount="559.58" OpenedDate="08/12/2015 11:09:44" Owner="Praesent purus" Percent="713.99">
+					<Common:Deposite.Currency>
+						<Common:Currency Code="Fermentum nulla maecenas" Description="Porta est hac ornare" Id="93"/>
+					</Common:Deposite.Currency>
+					<Common:Deposite.Id>
+						<System:Guid/>
+					</Common:Deposite.Id>
+					<Common:Deposite.MoneyTransactions>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="364.75" Comment="Platea leo primis accumsan" Id="55" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="245.67" Comment="Mus risus bibendum vestibulum aliquam" Id="83" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="717.03" Comment="Velit quam" Id="72" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="566.21" Comment="Quis nec integer" Id="86" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="457.92" Comment="Dictumst fringilla eleifend facilisi" Id="55" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+					</Common:Deposite.MoneyTransactions>
+				</Common:Deposite>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite>
+		</MoneyTransaction:DepositeMoneyTransaction>
+		<MoneyTransaction:DepositeMoneyTransaction Amount="185.17" Comment="Etiam blandit ante vestibulum malesuada" Id="22" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome">
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+				<System:Guid/>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite>
+				<Common:Deposite BankName="Non quisque per habitasse vestibulum" Currency_Id="71" CurrentAmount="937.01" CloseDate="08/12/2015 11:09:44" OpenedAmount="759.31" OpenedDate="08/12/2015 11:09:44" Owner="Donec sem hendrerit inceptos" Percent="280.06">
+					<Common:Deposite.Currency>
+						<Common:Currency Code="Adipiscing cras sed habitant" Description="Duis curae" Id="36"/>
+					</Common:Deposite.Currency>
+					<Common:Deposite.Id>
+						<System:Guid/>
+					</Common:Deposite.Id>
+					<Common:Deposite.MoneyTransactions>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="340.23" Comment="Interdum rutrum nunc vivamus" Id="24" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="773.23" Comment="Parturient aliquam" Id="71" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="582.26" Comment="Sapien himenaeos aliquet imperdiet" Id="56" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="872.1" Comment="Lobortis vestibulum semper sociis" Id="45" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="586.07" Comment="Taciti amet" Id="56" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+					</Common:Deposite.MoneyTransactions>
+				</Common:Deposite>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite>
+		</MoneyTransaction:DepositeMoneyTransaction>
+		<MoneyTransaction:DepositeMoneyTransaction Amount="465.37" Comment="Venenatis vulputate enim est" Id="58" TransactionDate="08/12/2015 11:09:44" TransactionType="Income">
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+				<System:Guid/>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite>
+				<Common:Deposite BankName="Commodo fusce tellus nascetur pharetra" Currency_Id="75" CurrentAmount="571.5" CloseDate="08/12/2015 11:09:44" OpenedAmount="712.02" OpenedDate="08/12/2015 11:09:44" Owner="Arcu vestibulum diam vel" Percent="257.43">
+					<Common:Deposite.Currency>
+						<Common:Currency Code="Tempor conubia sit" Description="Adipiscing penatibus cubilia parturient" Id="93"/>
+					</Common:Deposite.Currency>
+					<Common:Deposite.Id>
+						<System:Guid/>
+					</Common:Deposite.Id>
+					<Common:Deposite.MoneyTransactions>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="773.15" Comment="Porttitor placerat pulvinar dapibus tincidunt" Id="28" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="559.41" Comment="Egestas nam eget" Id="34" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="262.73" Comment="Sed sagittis euismod lorem" Id="77" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="898.3" Comment="Vestibulum adipiscing senectus tristique ultricies" Id="58" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="879.62" Comment="Parturient dis elit" Id="87" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+					</Common:Deposite.MoneyTransactions>
+				</Common:Deposite>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite>
+		</MoneyTransaction:DepositeMoneyTransaction>
+		<MoneyTransaction:DepositeMoneyTransaction Amount="164.47" Comment="Suscipit torquent" Id="89" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome">
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+				<System:Guid/>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite>
+				<Common:Deposite BankName="Vestibulum curabitur" Currency_Id="18" CurrentAmount="684.3" CloseDate="08/12/2015 11:09:44" OpenedAmount="603.04" OpenedDate="08/12/2015 11:09:44" Owner="Tempus phasellus" Percent="798.79">
+					<Common:Deposite.Currency>
+						<Common:Currency Code="Feugiat vestibulum erat hac morbi" Description="Gravida nulla eros" Id="71"/>
+					</Common:Deposite.Currency>
+					<Common:Deposite.Id>
+						<System:Guid/>
+					</Common:Deposite.Id>
+					<Common:Deposite.MoneyTransactions>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="471.9" Comment="Tortor turpis leo mus nibh" Id="57" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="618.92" Comment="Nisi iaculis adipiscing" Id="25" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="922.51" Comment="Parturient proin nec" Id="77" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="358.15" Comment="Non per sociosqu sed nisl" Id="55" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="579.59" Comment="Consequat vestibulum augue vestibulum lacinia" Id="26" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+					</Common:Deposite.MoneyTransactions>
+				</Common:Deposite>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite>
+		</MoneyTransaction:DepositeMoneyTransaction>
+		<MoneyTransaction:DepositeMoneyTransaction Amount="189.85" Comment="Potenti felis dignissim" Id="92" TransactionDate="08/12/2015 11:09:44" TransactionType="Income">
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+				<System:Guid/>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite_Id>
+			<MoneyTransaction:DepositeMoneyTransaction.Deposite>
+				<Common:Deposite BankName="Sem adipiscing" Currency_Id="87" CurrentAmount="235.02" CloseDate="08/12/2015 11:09:44" OpenedAmount="529.76" OpenedDate="08/12/2015 11:09:44" Owner="Mauris nullam vestibulum" Percent="917.54">
+					<Common:Deposite.Currency>
+						<Common:Currency Code="Sit vel nam varius" Description="Sed dis convallis aenean parturient" Id="46"/>
+					</Common:Deposite.Currency>
+					<Common:Deposite.Id>
+						<System:Guid/>
+					</Common:Deposite.Id>
+					<Common:Deposite.MoneyTransactions>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="464.27" Comment="Est vestibulum" Id="60" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="532.92" Comment="Laoreet dolor nunc odio natoque" Id="68" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="893.84" Comment="Ultrices posuere adipiscing aptent" Id="79" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="938.62" Comment="Parturient orci" Id="47" TransactionDate="08/12/2015 11:09:44" TransactionType="Outcome"/>
+						<MoneyTransaction:DepositeMoneyTransaction Amount="283.73" Comment="Vehicula fames vestibulum" Id="61" TransactionDate="08/12/2015 11:09:44" TransactionType="Income"/>
+					</Common:Deposite.MoneyTransactions>
+				</Common:Deposite>
+			</MoneyTransaction:DepositeMoneyTransaction.Deposite>
+		</MoneyTransaction:DepositeMoneyTransaction>
+	</Common:Deposite.MoneyTransactions>
+</Common:Deposite>

@@ -6,6 +6,13 @@ using Microsoft.Practices.Unity;
 
 namespace Banalyzer.Application.Common
 {
+    //1568 V index W
+    //parkshina.ua 0505585111 0988100111
+    
+    //производство и год выпуска
+
+    //0501822947
+
     public class ServiceFactory : IServiceFactory
     {
         private readonly IUnityContainer _container;

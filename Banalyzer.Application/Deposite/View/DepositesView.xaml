@@ -1,52 +1,34 @@
-﻿<UserControl x:Class="Banalyzer.Application.Deposite.View.DepositesView"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:view="clr-namespace:Banalyzer.Application.Deposite.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    
-    <UserControl.Resources>       
-        <ControlTemplate x:Key="DepositeBigCard">
-            <Grid Margin="5,5,5,5" Height="Auto" Width="Auto">
-                <view:DepositeCardBigView/>
-            </Grid>
-        </ControlTemplate>
-        
-        <ControlTemplate x:Key="DepositeSmallCard">
-            <Grid Margin="5,5,5,5" Height="Auto" Width="Auto">
-                <view:DepositeCardSmallView/>
-            </Grid>
-        </ControlTemplate>
+             xmlns:view="clr-namespace:Banalyzer.Application.Deposite.View" 
+			 xmlns:Common="clr-namespace:Banalyzer.Domain.Common;assembly=Banalyzer.Domain" 
+			 x:Class="Banalyzer.Application.Deposite.View.DepositesView">    
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
 
-        <Style x:Key="DepositeStyle" TargetType="{x:Type ListBoxItem}">
-            <Setter Property="Template" Value="{StaticResource DepositeSmallCard}"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Template" Value="{StaticResource DepositeBigCard}"/>
-                </Trigger>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Template" Value="{StaticResource DepositeBigCard}"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        
-    </UserControl.Resources>
-    
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <DockPanel>
-            <Button Command="{Binding AddDepositeCommand}">Add New Deposite</Button>
-            <Button Command="{Binding EditDepositeCommand}" Visibility="{Binding IsDepositeSelected, Converter={StaticResource BoolToVis}}">Edit Deposite</Button>
-            <Button Command="{Binding RemoveDepositeCommand}" Visibility="{Binding IsDepositeSelected, Converter={StaticResource BoolToVis}}">Remove Deposite</Button>
-        </DockPanel>
-        <ListBox ItemsSource="{Binding Deposites}" ItemContainerStyle="{StaticResource DepositeStyle}" SelectedItem="{Binding SelectedDeposite}"
-                 Height="Auto" VerticalAlignment="Stretch">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-        </ListBox>
-    </StackPanel>
+		<StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
+			<Button Margin="5,5,5,5" Command="{Binding AddDepositeCommand}" Style="{StaticResource AddButtonStyle}" Width="50" Height="50" Content="Add"/>
+			<Button Margin="5,5,5,5" Command="{Binding EditDepositeCommand}" Style="{StaticResource EditButtonStyle}" 
+				Visibility="{Binding IsDepositeSelected, Converter={StaticResource BoolToVis}}" Width="50" Height="50" Content="Edit"/>
+			<Button Margin="5,5,5,5" Command="{Binding RemoveDepositeCommand}" Style="{StaticResource RemoveButtonStyle}"  
+				Visibility="{Binding IsDepositeSelected, Converter={StaticResource BoolToVis}}" Width="50" Height="50" Content="Remove"/>
+		</StackPanel>
+
+		<ListBox Grid.Row="1" ItemContainerStyle="{StaticResource DepositeCardStyle}" SelectedItem="{Binding SelectedDeposite}"
+			ScrollViewer.CanContentScroll="True" ItemsSource="{Binding Deposites}">
+			<ListBox.ItemsPanel>
+				<ItemsPanelTemplate>
+					<!--<WrapPanel/>-->
+					<UniformGrid />
+				</ItemsPanelTemplate>
+			</ListBox.ItemsPanel>
+		</ListBox>
+
+	</Grid>
 </UserControl>

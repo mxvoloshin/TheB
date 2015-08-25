@@ -1,0 +1,47 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Banalyzer.Application.DepositeCardTemp"
+	x:Name="UserControl"
+	d:DesignWidth="300" d:DesignHeight="200" d:DataContext="{d:DesignData /SampleData/DepositeSampleData.xaml}">
+
+	<Border x:Name="Border" BorderBrush="{StaticResource ListBoxBorderBrush}">
+        <StackPanel Orientation="Vertical">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock TextWrapping="Wrap" Grid.Column="0" Text="{Binding BankName}" HorizontalAlignment="Left" 
+                             Foreground="White"  Margin="10,5,0,5" />
+                <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="{Binding Owner}" HorizontalAlignment="Right"  
+                             Foreground="White"  Margin="0,5,10,5" />
+            </Grid>
+
+            <Rectangle Margin="10, 0, 10, 0" Stroke="{StaticResource ListBoxItemSelectedBorderBrush}" StrokeThickness="2" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="{Binding OpenedAmount}" FontSize="30" Margin="0, 20, 0, 0"/>
+                <Label Content="{Binding Currency.Code}" FontSize="20" VerticalAlignment="Bottom" Margin="0, 20, 0, 0"/>
+            </StackPanel>
+
+            <Label HorizontalAlignment="Right" FontSize="20" Margin="0, 0, 50, 0">
+                <TextBlock Text="{Binding Path=Percent, StringFormat='{}{0} %'}"/>
+            </Label>
+            <Rectangle Margin="50, 0, 50, 0" Stroke="{StaticResource ListBoxItemSelectedBorderBrush}" StrokeThickness="5" />
+
+            <DockPanel Margin="10, 10, 10, 10" HorizontalAlignment="Stretch">
+                <Label HorizontalAlignment="Left" FontSize="15">
+                    <TextBlock Text="{Binding Path=OpenedDate, StringFormat='{}{0:dd.MM.yyyy}'}"/>
+                </Label>
+                <Label  HorizontalAlignment="Right" FontSize="15">
+                    <TextBlock Text="{Binding Path=CloseDate, StringFormat='{}{0:dd.MM.yyyy}'}"/>
+                </Label>
+            </DockPanel>
+        </StackPanel>
+    </Border>
+</UserControl>
