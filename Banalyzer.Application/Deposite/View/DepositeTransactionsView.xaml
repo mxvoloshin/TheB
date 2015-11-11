@@ -18,14 +18,17 @@
         </ControlTemplate>
     </UserControl.Resources>
     <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding AddDepositeInTransactionCommand}" Style="{StaticResource AddButtonStyle}" Content="In"/>
+            <Button Command="{Binding AddDepositeOutTransactionCommand}" Style="{StaticResource AddButtonStyle}" Content="Out"/>
+            <Button Command="{Binding EditDepositeTransactionCommand}" Style="{StaticResource EditButtonStyle}" 
+				Visibility="{Binding IsEditMode, Converter={StaticResource BoolToVis}}" Content="Edit" IsEnabled="{Binding IsEditMode}"/>
+            <Button Command="{Binding RemoveDepositeTransactionCommand}" Style="{StaticResource RemoveButtonStyle}"  
+				Visibility="{Binding IsEditMode, Converter={StaticResource BoolToVis}}" Content="Remove" IsEnabled="{Binding IsEditMode}"/>
+        </StackPanel>
+
         <ContentControl Template="{StaticResource DepositeTransaction}" DataContext="{Binding SelectedTransaction}"/>
         
-        <Button Content="In Transaction" Command="{Binding AddDepositeInTransactionCommand}"/>
-        <Button Content="Out Transaction" Command="{Binding AddDepositeOutTransactionCommand}"/>
-
-        <Button Content="Edit Transaction" Command="{Binding EditDepositeTransactionCommand}" IsEnabled="{Binding IsEditMode}"/>
-        <Button Content="Remove Transaction" Command="{Binding RemoveDepositeTransactionCommand}" IsEnabled="{Binding IsEditMode}"/>
-
         <ListView ItemsSource="{Binding DepositeTransactions}" SelectedItem="{Binding SelectedTableTransaction, Mode=TwoWay}">
             <ListView.View>
                 <GridView>

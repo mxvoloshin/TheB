@@ -24,7 +24,6 @@ namespace Banalyzer.Application.Services
             {
                 return Task.Run<IReadOnlyCollection<Currency>>(() =>
                 {
-                    Thread.Sleep(10000);
                     using (var uof = _serviceFactory.UnitOfWork())
                     {
                         return uof.Repository<Currency, Int32>().All().ToList();

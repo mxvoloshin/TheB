@@ -112,6 +112,7 @@ namespace Banalyzer.Application.Deposite.ViewModel
 
             try
             {
+                DepositeTransactionViewModel = null;
                 DepositesViewModel = await _vmLocator.DepositeViewModel();
             }
             catch (Exception ex)
@@ -130,6 +131,7 @@ namespace Banalyzer.Application.Deposite.ViewModel
 
             try
             {
+                DepositeTransactionViewModel = null;
                 DepositesViewModel = await _vmLocator.DepositeEditViewModel(args.Deposite);
             }
             catch (Exception ex)
@@ -148,6 +150,7 @@ namespace Banalyzer.Application.Deposite.ViewModel
 
             try
             {
+                DepositeTransactionViewModel = null;
                 await _serviceFactory.DepositeService().RemoveDeposite(args.Deposite);
                 DepositesViewModel = await _vmLocator.DepositesViewModel();
             }

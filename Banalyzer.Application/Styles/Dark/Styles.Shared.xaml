@@ -794,6 +794,9 @@
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
         <Setter Property="MinWidth" Value="50"/>
         <Setter Property="MinHeight" Value="50"/>
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="5,5,5,5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -821,6 +824,9 @@
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
         <Setter Property="MinWidth" Value="50"/>
         <Setter Property="MinHeight" Value="50"/>
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="5,5,5,5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -842,11 +848,13 @@
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style x:Key="RemoveButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
         <Setter Property="MinWidth" Value="50"/>
         <Setter Property="MinHeight" Value="50"/>
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="5,5,5,5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -867,7 +875,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style x:Key="DepositeCardStyle" TargetType="{x:Type ListBoxItem}">
         <Setter Property="Margin" Value="5,5,5,5"/>
         <Setter Property="MinWidth" Value="300"/>
